@@ -1,0 +1,132 @@
+/* WP Media Toolkit — 图片预览灯箱（自包含样式） */
+
+.wpmt-lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 1999999;
+}
+
+.wpmt-lightbox[hidden] {
+	display: none !important;
+}
+
+.wpmt-lightbox__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.75);
+}
+
+.wpmt-lightbox__dialog {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5rem 1.5rem 1.5rem;
+	box-sizing: border-box;
+}
+
+.wpmt-lightbox__close,
+.wpmt-lightbox__toolbtn,
+.wpmt-lightbox__nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	background: rgba(0, 0, 0, 0.35);
+	color: #fff;
+	cursor: pointer;
+	border-radius: 999px;
+	line-height: 1;
+	padding: 0;
+}
+
+.wpmt-lightbox__close:hover,
+.wpmt-lightbox__toolbtn:hover,
+.wpmt-lightbox__nav:hover {
+	background: rgba(0, 0, 0, 0.55);
+}
+
+.wpmt-lightbox__close {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	z-index: 20;
+	width: 44px;
+	height: 44px;
+	font-size: 28px;
+}
+
+.wpmt-lightbox__tools {
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	z-index: 20;
+	display: flex;
+	gap: 8px;
+}
+
+.wpmt-lightbox__toolbtn {
+	width: 52px;
+	height: 44px;
+	font-size: 16px;
+}
+
+.wpmt-lightbox__nav {
+	position: absolute;
+	top: 50%;
+	z-index: 20;
+	width: 44px;
+	height: 44px;
+	font-size: 28px;
+	transform: translateY(-50%);
+}
+
+.wpmt-lightbox__nav--prev {
+	left: 18px;
+}
+
+.wpmt-lightbox__nav--next {
+	right: 18px;
+}
+
+.wpmt-lightbox__nav:disabled,
+.wpmt-lightbox__toolbtn:disabled {
+	opacity: 0.35;
+	cursor: not-allowed;
+}
+
+.wpmt-lightbox__meta {
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.85);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wpmt-lightbox__stage {
+	position: relative;
+	z-index: 0;
+	display: flex;
+	width: 100%;
+	max-width: 1200px;
+	max-height: 80vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.wpmt-lightbox__img {
+	max-height: 80vh;
+	max-width: 100%;
+	object-fit: contain;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+	user-select: none;
+	touch-action: none;
+	transform-origin: center center;
+}
